@@ -1,0 +1,85 @@
+/*Adjusting the size for our container*/
+$gridColumnWidth: 68px;
+$gridGutterWidth: 20px;
+@import "bootstrap";
+@import "compass";
+@import "_helpers";
+
+body {
+	background: image-url("bg_texture.png") repeat; 
+	font-family: $main_font;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.banner {
+	height: 56px;
+}
+
+.navbar {
+	box-shadow: none;
+	background-color: $light;
+    border-bottom: 1px solid #808488;
+    box-shadow: none;
+    padding: em(10) 0 em(5) 0;
+    .nav li a {
+    	color: $blue;
+    	font-weight: $heading-font-weight;
+    }
+    a.login-buttons-locked {
+    	padding: 0 !important;
+    	height: 24px;
+    	margin-top: em(6);
+    }
+    .dropdown-heading, .nav li .dropdown-heading a {
+    	color: $dark;
+    	font-weight: $heading-font-weight;
+    }
+    .dropdown-menu {
+    	background-color: $lightblue;
+    }
+    ul li ul li {
+    	list-style: none
+    }
+}
+
+#tagline {
+	color: #171F26;
+    font-size: em(22);
+    font-weight: $heading-font-weight;
+    text-align: center;
+    margin: em(15, 22) 0;
+}
+
+.page-container {
+	background: $light;
+	@include border-radius(5px);
+	position: relative;
+}
+
+.title-container {
+	border-bottom: 1px solid #BEC5CF;
+}
+
+.page-title {
+	color: $dark;
+	font-size: em(35);
+	font-weight: $heading-font-weight;
+	padding: em(10) 0 em(5) 0;
+}
+
+.subtext {
+	font-size: em(14);
+	font-style: italic;
+	padding: em(25, 14) 0 em(5, 14) 0;
+	font-weight: $heading-font-weight;
+}
+
+.subheading {
+	color: $blue;
+	font-size: em(20);
+	font-weight: $heading-font-weight;
+	background: image-url("line_wbook.png") bottom no-repeat;
+	padding: em(10) 0 em(20) 0;
+	margin-bottom: em(20);
+}

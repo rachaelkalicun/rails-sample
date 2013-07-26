@@ -1,0 +1,14 @@
+<div class="floating-contact">
+	<div class="fixed">
+		<p>Get Free Tutoring Info Now</p>
+		<%= form_tag("/search", method: "get") do %>
+		    <%= select_tag(:option, options_for_select([['Atlanta', 13], ['Austin', 24], ['Boston', 22], ['Chicago', 3], ['Dallas Fort Worth', 5], ['Denver', 24], ['Houston', 2], ['Kansas City', 12], ['Los Angeles', 16], ['Miami', 25], ['Milwaukee', 20], ['New York City', 10], ['Philadelphia', 17], ['Phoenix', 6], ['San Antonio', 21], ['San Diego', 15], ['San Francisco-Bay Area', 23], ['Seattle', 19], ['St. Louis', 1], ['Tucson', 7], ['Washington DC', 18]], selected: :option )) %>
+		    <%= text_field_tag 'name', nil, placeholder: 'Your Full Name' %>
+		    <%= text_field_tag 'email', nil, placeholder: 'Email' %>
+		    <%= text_field_tag 'phone', nil, placeholder: 'Phone Number' %>
+		    <%= text_field_tag 'zip', nil, placeholder: 'Zip Code' %>
+		    <input type="submit" value="Request Tutoring Info" class="btn btn-large btn-danger">
+	    <% end %> 
+	    <p>Info &amp; Prices Emailed</p>
+	</div>
+</div>

@@ -1,0 +1,71 @@
+/*Start Variables*/
+
+$main_font: 'Source Sans Pro', sans-serif;
+$sub_font: 'Georgia',sans-serif;
+$heading-font-weight: 600;
+
+/*Colors*/
+$text: #373836;
+$blue: #00A3E8;
+$lightblue: #F1F6FB;
+$light: #ffffff;
+$dark: #2B3743;
+
+$link: #00A3E8;
+$link-hover: #fec842;
+/*End Variables*/
+
+/*Start Functions*/
+$browser-context: 16;
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+/*End Functions*/
+
+/*Start Sprites*/
+$login-buttons-sprite-dimensions: true;
+@import "login-buttons/*.png";
+@include all-login-buttons-sprites;
+
+$press-sprite-dimensions: true;
+@import "press/*.png";
+@include all-press-sprites;
+/*End Sprites*/
+
+/*Some inside padding for the containers*/
+/*http://blog.davedennis.me/code/adding-padding-to-twitter-bootstrap-container/*/
+$container-padding:    30px;
+$container-base-width:  1036px;
+$container-width: $container-base-width - $container-padding * 2;
+
+.container-padded {
+    margin:0 auto;
+    padding: 0 $container-padding;
+    width: $container-width;
+}
+
+
+/*Start Mixins*/
+@mixin circle($width) {
+  width: $width;
+  height: $width;
+  -webkit-border-radius: $width/2;
+     -moz-border-radius: $width/2;
+          border-radius: $width/2;
+}
+
+@mixin letterpress($opacity){
+  text-shadow: white($opacity) 0 1px 0;
+}
+/*End Mixins*/
+
+/*Extend*/
+%clearfix {
+   &:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }
+}

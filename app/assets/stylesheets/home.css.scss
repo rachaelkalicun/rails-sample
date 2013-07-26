@@ -1,0 +1,276 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "compass";
+@import "_helpers";
+
+
+.founder-container {
+	padding-bottom: em(15);
+	.founder-image {
+		@include circle(135px);
+		border: 2px solid #BEC5CF;
+		float: left;
+		margin: 0 em(10) em(10) 0;
+	}
+	.founder-name {
+		color: #FFC843;
+		font-size: em(27);
+		font-weight: $heading-font-weight;
+	}
+	.founder-title {
+		font-weight: $heading-font-weight;
+		text-transform: uppercase;
+		margin-bottom: em(15);
+	}
+	 p {
+		line-height: em(20)
+	}
+}
+
+.press-container {
+	background: #EDF2F5;
+	border-top: 1px solid #A6B1B7;
+	border-bottom: 1px solid #A6B1B7;
+	margin-bottom: em(15);
+	padding: em(20) 0;
+	.badge-container {
+		float: left;
+	}
+	.featured-badge {
+		width: 117px;
+		height: 25px;
+		border: 1px solid darken(#ffcb20, 25%);
+		border-right: 0;
+		background: #ffcb20;
+		float: left;
+		box-shadow: 2px 2px 1px -2px #333;
+		text-transform: uppercase;
+		font-size: em(16);
+		font-weight: $heading-font-weight;
+		color: darken(#ffcb20, 30%);
+		text-shadow: 0 1px 0 rgba(white, .7);
+		padding-left: em(28);
+    padding-top: em(9);
+    margin-top: em(10);
+	}
+
+	.featured-badge-triangle {
+		background: #ffcb20 image-url("featured-badge-triangle.png") right no-repeat;
+		height: 36px;
+		width: 12px;
+		float: left;
+		margin-top: em(10);
+	}
+	.companies {
+		float: left;
+		width: 500px;
+		margin-left: em(50);
+		.row:last-child {
+			margin-top: em(10);
+		}
+	}
+}
+
+.staffmember {
+	float: left;
+	margin: em(15) em(15) 0 0;
+	width: 150px;
+	height: 250px;
+	position: relative;
+	.name {
+		color: $blue;
+    	font-size: em(16);
+    	font-weight: $heading-font-weight;
+    	margin: em(10) 0 0 0;
+	}
+
+	img:hover {
+		cursor: pointer;
+	}
+
+	.title {
+		font-size: em(14);
+	}
+	.view {
+		display: none;
+		position: absolute;
+		top: 148px;
+    width: 119px;
+		background: image-url("popout.png") no-repeat scroll 53px 11px #FFC843;
+		font-size: em(16);
+		text-transform: uppercase;
+		color: blue;
+		font-weight: $heading-font-weight;
+		padding: em(8);
+		height: 16px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.popup {
+		width: 400px;
+		padding: em(10);
+		.modal-header {
+			background-image: linear-gradient(color-stops(#7bb7de, #55a4d4));
+			height: 30px;
+			border: 1px solid #4297D7;
+			@include border-radius(4px);
+			margin-bottom: em(10);
+		}
+		img {
+			float: left;
+			margin: 0 em(10) em(10) 0;
+		}
+		.title {
+			margin-bottom: em(15);
+		}
+		p {
+			line-height: em(20);
+		}
+	}
+
+}
+
+.call-to-action {
+	background: #2C3845;
+	color: #FFFFFF;
+  font-size: em(19);
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  padding: em(20) 0;
+  .btn {
+  	margin-bottom: em(15);
+  }
+}
+
+.testimonial-container  {
+	background: $lightblue;
+	.heading {
+		font-size: em(26);
+		color: $dark;
+		font-weight: $heading-font-weight;
+		padding: em(15) 0 0 0;
+	}
+	.testimonial {
+		border-bottom: 1px solid #CCCCCC;
+		padding: em(15) 0;
+		margin-bottom: em(10);
+		.heading {
+		color: $dark;
+    	font-size: em(26);
+    	font-weight: $heading-font-weight;
+		}
+		.photo {
+    		@include circle(135px);
+    		float: left;
+    		margin: 0 em(10) em(10) 0;
+    	}
+    	.title {
+    		color: $dark;
+    		font-family: $sub_font;
+    		font-style: italic;
+    		font-weight: $heading-font-weight;
+    		padding-left: em(30);
+    		margin-left: 150px;
+    	}
+    	.school {
+    		color: $dark;
+    		padding-left: em(30);
+    		margin-left: 150px;
+    	}
+    	p {
+    		background: image-url("large_open_quote.png") left top no-repeat;
+    		margin-left: 150px;
+    		padding-left: em(30);
+    		line-height: 1.25em;
+    	}
+	}
+	.testimonial#last-testimonial {
+		.photo {
+			float: right;
+		}
+		p, .title, .school {
+			margin-left: 0;
+		}
+	}
+}
+
+.footer-contact {
+    background-color: #FEC842;
+    text-align: center;
+    @include border-bottom-radius(5px);
+    form {
+    	margin-bottom: 0;
+    }
+    h3 {
+    	color: #8C690B;
+    	font: 600 30px 'Source Sans Pro',sans-serif;
+    	margin: 0;
+    	padding: 10px 0 0;
+    	text-align: center;
+    	text-shadow: 1px 1px 1px #FFDC88;
+    }
+	p {
+		@extend h3;
+		font-size: em(18);
+		padding-bottom: em(15);
+	}
+    select, input {
+    	width: 150px;
+    }
+   
+}
+
+.footer {
+    background-color: #2C3845;
+    margin-top: em(-15);
+    padding-top: em(25);
+    a {
+    	color: #FFFFFF;
+    	font-size: 15px;
+    	font-weight: 300;
+    	margin: 0 5px;
+    }
+}
+
+#copyright, #copyright a {
+    color: #FFFFFF;
+    font-weight: 200;
+    margin-top: 15px;
+}
+
+.disclaimer {
+	font-size: em(13);
+	color: black;
+	width: 600px;
+	margin: em(15) 0 em(25) 0;
+}
+
+
+.floating-contact {
+	position: fixed;
+	width: 260px;
+  right: 100px;
+  top: 140px;
+	background: image-url("floating-contact.gif") top no-repeat scroll #3b566a;
+	text-align: center;
+	@include border-radius(10px);
+	p {
+		color: $light;
+		padding-top: em(15);
+		font-weight: $heading-font-weight;
+		font-size: em(20);
+		text-align: center;
+		&:last-child {
+			padding-top: 0;
+			font-size: em(18);
+			margin-bottom: em(15);
+		}
+	}
+	form {
+		margin-top: em(20);
+	}
+}

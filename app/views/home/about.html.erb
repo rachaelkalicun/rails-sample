@@ -1,0 +1,137 @@
+<div class="container-padded title-container">
+  <div class="row">
+      <div class="page-title span2">About Us</div>
+      <span class="subtext span4">Call us now or fill out the form to the right, to connect with award-winning tutors today! </span>
+    </div>
+</div>
+<div class="container-padded">
+  <div class="row">
+    <div class="span8 subheading">
+        Our leadership and management work tirelessly to connect students and parents to the best private tutors.
+    </div>
+  </div>
+  <div class="row">
+    <div class="span8 founder-container">
+      <%= image_tag("chuck-cohn.jpg", size: "135x135", alt: "Chuck Cohn Founder", class: "founder-image") %>
+      <div class="founder-name">Chuck Cohn</div>
+      <div class="founder-title">Founder and CEO</div>
+      <p>As a high school honors student, Chuck struggled to find a highly effective tutor who could help him with his more difficult Advanced Placement classes and standardized test preparation. The overpriced big-name national tutoring companies didn’t offer personalized service in specific subjects and spent little time on their tutor recruitment efforts. Searching on directory sites yielded spotty results. Cohn recognized that there was an opportunity to provide best-in-class tutoring at a moderate price in the comfort of clients’ homes by focusing on identifying outstanding tutors and eliminating the extra costs traditionally associated with national tutoring companies. In 2007, while he was a student at Washington University in St. Louis, Cohn recognized that two of his best friends would make perfect tutors: they were brilliant, friendly, and could explain difficult concepts better than any tutor he had ever had. Cohn founded Varsity Tutors and hired his two brilliant friends as the first two tutors. The feedback he received from parents was outstanding and so he began hiring other extremely talented individuals who had the communication and technical skills necessary to be amazing tutors. Since then, Varsity Tutors has expanded into 15 other cities and has helped thousands of families.</p>
+    </div>
+    <div class="span4"></div>
+  </div>
+</div>
+<div class="press-container">
+  <div class="row">
+    <div class="span9">
+      <div class="badge-container">
+        <div class="featured-badge">Featured By:</div>
+        <div class="featured-badge-triangle"></div>
+      </div>
+      <div class="companies">
+        <div class="row">
+          <div class="press-chicagotribune span1"></div>
+          <div class="press-fox span1"></div>
+          <div class="press-sfchronicle span1"></div>
+        </div>
+        <div class="row">
+          <div class="press-nbc span1"></div>
+          <div class="press-huffington span1"></div>
+          <div class="press-cbs span1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-padded">
+  <div class="row">
+    <div class="span8">
+      <% @staff.each do |s| %>
+        <div class="staffmember">
+          <%= image_tag "staff/#{s.imagepath}" %>
+          <div class="name"><%= s.name %></div>
+          <div class="title"><%= s.title %></div>
+          <div class="view"><a href="#">View</a></div>
+          <div class="popup modal" style="display: none">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <%= image_tag "staff/#{s.imagepath}" %>
+            <div class="name"><%= s.name %></div>
+            <div class="title"><%= s.title %></div>
+            <p><%= s.summary %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="call-to-action">
+  <div class="row">
+      <div class="span9">
+        <button class="btn btn-primary btn-large">Get Info &amp; Pricing</button><br>
+        <strong>98%</strong> of our customers would recommend us to friends and family!
+      </div>
+  </div>
+</div>
+<div class="testimonial-container">
+  <div class="container-padded"> 
+    <div class="heading">Here's what our clients are saying</div>
+    <div class="row">
+        <div class="span8 testimonial">
+          <%= image_tag("testimonials/man.jpg", size: "135x135", class: "photo") %>
+          <p>Thank you so much for your help, and for leading your tutor to our daughter. He is not only a remarkable tutor, he was an excellent teacher for our student. Maybe more importantly, our daughter is now armed with the confidence that math is not a hopeless cause, and she really can conquer it. That is a great success story! <%= image_tag("large_close_quote.png", size: "24x20") %></p>
+          <div class="title">
+            Parent of 12th grade student
+          </div>
+          <div class="school">
+            Tanque Verde High School, Tucson, AZ
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span8 testimonial" id="last-testimonial">
+          <%= image_tag("testimonials/woman.jpg", size: "24x20", class: "photo") %>
+          <p>Thank you very much for the wonderful service that you have provided for Jose. Jose has learned so much from Amy [our tutor]. I was very impressed with her and your program. Thanks again and please let Amy know how wonderful she is. I was very impressed. <%= image_tag("large_close_quote.png", size: "24x20") %></p>
+          <div class="title">
+            Parent of 12th grade student
+          </div>
+          <div class="school">
+            Tanque Verde High School, Tucson, AZ
+          </div>
+        </div>
+    </div>
+  </div>  
+</div>
+
+<div class="footer-contact">
+    <h3>FIND THE BEST TUTORS</h3>
+    <%= form_tag("/search", method: "get") do %>
+      <%= select_tag(:option, options_for_select([['Atlanta', 13], ['Austin', 24], ['Boston', 22], ['Chicago', 3], ['Dallas Fort Worth', 5], ['Denver', 24], ['Houston', 2], ['Kansas City', 12], ['Los Angeles', 16], ['Miami', 25], ['Milwaukee', 20], ['New York City', 10], ['Philadelphia', 17], ['Phoenix', 6], ['San Antonio', 21], ['San Diego', 15], ['San Francisco-Bay Area', 23], ['Seattle', 19], ['St. Louis', 1], ['Tucson', 7], ['Washington DC', 18]], selected: :option )) %>
+      <%= text_field_tag 'name', nil, placeholder: 'Your Full Name' %>
+      <%= text_field_tag 'email', nil, placeholder: 'Email' %>
+      <%= text_field_tag 'phone', nil, placeholder: 'Phone Number' %>
+      <%= text_field_tag 'zip', nil, placeholder: 'Zip Code' %><br>
+      <button class="btn btn-large btn-danger">
+        Find Your Tutor
+        <i class="icon-circle-arrow-right icon-white"></i>
+      </button>
+    <% end %>
+    <p>Info &amp; Prices Emailed</p>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $(".staffmember img").hover(function(event){
+      event.preventDefault();
+      $(this).parent().find(".view").toggle();
+    });
+    $(".staffmember img").click(function(event){
+      event.preventDefault();
+      $(this).parent().find(".popup").modal();
+    });
+    $(".staffmember .view").click(function(event){
+      event.preventDefault();
+      $(this).parent().find(".popup").modal();
+    });
+  }); 
+</script>
